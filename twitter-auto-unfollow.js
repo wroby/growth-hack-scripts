@@ -1,22 +1,18 @@
 /* *******************************************************************************************
-* Find a # related to your business and search for tweets using it by using the search bar.
-*
-* This script will allow you to like all the tweets displayed on the screen. You can then search for another hashtag and start again.
-*
-* -> Scroll down the page to display as many tweets as you can
+* -> Open your following list or create a new list and add all the accounts you want to unfollow
 *
 * -> Open the Chrome console (Command + Option + J on Mac or Ctrl + Shift + J on Windows)
 *
 * -> Copy / Paste the script below:
 *
+* It should be pretty quick (50 unfollowed accounts/seconds) - I suggest to add a timeout between clicks.
 * ******************************************************************************************* */
 
-var inputs = document.getElementsByClassName ('HeartAnimation');
-
-for (i = 0; i <inputs.length; ++ i)
-
-{
-
-  inputs [i] .click ();
-
-}
+setInterval (function () {
+ t = $ ( "following.") find ( "follow-button..");
+ if (! t [0]) {
+  window.scrollTo (0, $ (document) .height ());
+ }
+ else {
+  console.log (t.attr ( "class")); t.trigger ( "click");
+}}, 100)
